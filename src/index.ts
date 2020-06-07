@@ -1,109 +1,116 @@
-let myButton = document.getElementById("myButton") as HTMLButtonElement | null;
-if (myButton == null) {
-    alert("Button not found.");
-} else {
-    
-    myButton.onclick = function () {
-        if(myButton == undefined) return;
-        alert("Hello World!");
-    }
-}// variables
+// variables
 let List = document.getElementById("List") as HTMLElement | null;
 let UserInput = document.getElementById("UserInput") as HTMLTextAreaElement | null;
 let AddButton = document.getElementById("AddButton") as HTMLButtonElement | null;
-let RemoveAll = document.getElementById("RemoveAll") as HTMLButtonElement | null;
+// let BMFavourite = document.getElementById("BMFavourite") as HTMLButtonElement | null;
+// let BMRemove = document.getElementById("BMFavourite") as HTMLButtonElement | null;
 
-//add list item function
-if (AddButton == null) {
-    alert("button not found");
-} else {
-    AddButton.onclick = function Add(event) {
-        event.preventDefault();
-        console.log(AddButton);
 
-        if (List == null) {
-            alert("List not found");
+
+export class Bookmark {
+    icon: string;
+    title: string;
+    url: string;
+
+    // constructor
+    constructor(Icon: string, Title: string, URL: string) {
+        this.icon = Icon;
+        this.title = Title;
+        this.url = URL;
+    }
+
+    //method
+    build(): void {
+
+        if (AddButton == null) {
+            alert("button not found");
         } else {
+            // AddButton.onclick = function Add() {
+            AddButton.onclick = () => {
+                this.icon = "o";
+                this.title = UserInput.value;
+                this.url = UserInput.value;
+                // this.build();
+                console.log("addbuttonclicked");
+                this.build();
+            }
+        }
+
+        // add bookmark
+        if (AddButton == null || List == null || UserInput == null) {
+            alert("element not found");
+        } else {
+
+            console.log("bookmark created")
+
             let BMBox: HTMLDivElement = document.createElement("div");
             BMBox.classList.add("InlineBox");
             List.append(BMBox);
 
-            if (UserInput == null) {
-                alert("input not found");
-            } else {
-                console.log("bookmark created")
-                let BMIcon: HTMLDivElement = document.createElement("div");
-                BMIcon.classList.add("BMIcon");
-                BMBox.append(BMIcon);
-                BMIcon.innerHTML = UserInput.value;
+            let BMIcon: HTMLDivElement = document.createElement("div");
+            BMIcon.classList.add("Icon");
+            BMBox.append(BMIcon);
+            BMIcon.innerHTML = this.icon;
 
-                let checked = new Boolean(false);
-                let RemoveButton: HTMLDivElement = document.createElement("div");
+            let BMTextBox: HTMLDivElement = document.createElement("div");
+            BMTextBox.classList.add("BookmarkText");
+            BMBox.append(BMTextBox);
 
-                //change colour of list item
-                BMIcon.onclick = function CheckItem() {
-                    
-                    // //change to grey and checked
-                    // if (checked == false) {
-                    //     checked = true;
-                    //     console.log("BMIcon checked")
-                    //     console.log("checked = " + checked)
-                    //     BMIcon.classList.remove("BMIcon");
-                    //     BMIcon.classList.add("checked");
+            let BMLabel: HTMLDivElement = document.createElement("div");
+            BMLabel.classList.add("BMLabel");
+            BMTextBox.append(BMLabel);
+            BMLabel.innerHTML = this.title;
 
-                        //adds the delete button
-                        BMBox.append(RemoveButton);
-                        RemoveButton.classList.add("listdel");
-                        RemoveButton.innerHTML = "remove";
+            let BMURL: HTMLDivElement = document.createElement("div");
+            BMURL.classList.add("BMURL");
+            BMTextBox.append(BMURL);
+            BMURL.innerHTML = this.url;
 
-                        //delete list item function
-                        RemoveButton.onclick = function Remove() {
-                            BMIcon.remove();
-                            RemoveButton.remove();
-                            BMBox.remove();
-                        }
+            let BMFavourite: HTMLDivElement = document.createElement("div");
+            BMFavourite.classList.add("NotFavourite");
+            BMBox.append(BMFavourite);
+            BMFavourite.innerHTML = "<3";
 
-                        //change back to green
-                    } else if (checked == true) {
-                        checked = false;
-                        console.log("BMIcon unchecked")
-                        console.log("checked = " + checked)
-                        BMIcon.classList.remove("checked");
-                        BMIcon.classList.add("BMIcon");
-
-                        //removes the delete button again
-                        RemoveButton.remove();
-                    }
-                }
-
-                //resets input text box
-                if (UserInput == null) {
-                    console.log("UserInput not found");
-                } else {
-                    UserInput.value = "";
-
-                    //pauses event
-                    if (event == null) {
-                        console.log("event not found");
-                    } else {
-                        event.preventDefault();
-                    }
-
-                    // removes all items from list
-                    if (RemoveAll == null) {
-                        console.log("RemoveAll not found");
-                    } else {
-                        RemoveAll.onclick = function RemoveAll() {
-                            console.log("RemoveAll pressed");
-                            if (List == null) return;
-                            List.innerHTML = "";
-                        }
-                    }
+            //add favourite status
+            let checked = new Boolean(false);
+            BMFavourite.onclick = function CheckItem() {
+                if (checked == false) {
+                    checked = true;
+                    BMFavourite.classList.remove("NotFavourite");
+                    BMFavourite.classList.add("Favourite");
+                } else if (checked == true) {
+                    checked = false;
+                    BMFavourite.classList.remove("Favourite");
+                    BMFavourite.classList.add("NotFavourite");
                 }
             }
+
+            let BMRemove: HTMLDivElement = document.createElement("div");
+            BMRemove.classList.add("Favourite");
+            BMBox.append(BMRemove);
+            BMRemove.innerHTML = "X";
+
+            //remove bookmark
+            BMRemove.onclick = function remove() {
+                BMBox.remove();
+                console.log("bookmark removed")
+            }
+
+            //resets input text box
+            UserInput.value = "";
         }
     }
 }
+
+
+let bm1 = new Bookmark("*", "My Bookmark Label", "www.websiteURLgoeshere.com");
+let bm2 = new Bookmark("@", "My Second Bookmark", "www.coolpage.cool");
+
+console.log(bm1);
+console.log(bm2);
+
+bm1.build();
+bm2.build();
 
 
 

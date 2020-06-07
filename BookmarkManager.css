@@ -1,104 +1,134 @@
-/* html {
+html {
     user-select: none;
-} */
+    font-family: 'Arial';
+}
 
 .Container {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    padding-top: 10px;
+    align-items: center;
     max-width: 400px;
     margin: auto;
-    background: rgb(167, 167, 167);
+    background: rgb(230, 230, 230);
 }
 
 /* ============================== */
 
 .InlineBox {
-    width: 98%;
+    margin-top: 3px;
+    width: 390px;
     display: inline-flex;
-    justify-content: space-between;
     background: rgb(212, 29, 29);
+    /* border: 0.1px solid #ff1515; */
+}
+
+.Footer {
+    text-align: center;
+    height: 20px;
+    font-weight: bold;
+    font-family: 'Arial';
+    color: rgb(66, 66, 66);
 }
 
 .Title {
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
-    line-height: 35px;
+    line-height: 50px;
+    padding-left: 50px;
     font-family: 'Arial';
     color: rgb(66, 66, 66);
     font-size: 150%;
-    background: rgb(211, 211, 211);
+    background: rgb(230, 230, 230);
 }
 
 .AddButton {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Arial';
-    color: rgb(66, 66, 66);
-    font-size: 150%;
-    background: rgb(231, 231, 231);
-}
-
-/* ============================== */
-
-/* .list {
-    width: 310px;
-} */
-
-.Input {
-    flex-grow: 1;
-    border: 1px solid #d0d1d1;
-    /* width: 300px; */
-    display: inline-flex;
-    justify-content: space-between;
-    background: rgb(240, 243, 240);
-}
-
-/* ============================== */
-
-.Icon {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Arial';
-    color: rgb(66, 66, 66);
-    font-size: 150%;
-    background: rgb(29, 212, 38);
-    
-}
-
-.BookmarkText {
-
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: flex-end;
-    background: rgb(29, 200, 212);
-    
-}
-
-.BMLabel {
-    height: 30px;
-    background: rgb(116, 129, 141); 
-}
-
-.BMURL {
-    height: 20px;
-    background: rgb(182, 203, 206);
-}
-
-.Favourite {
     cursor: pointer;
     width: 50px;
     height: 50px;
     text-align: center;
     font-weight: bold;
     font-family: 'Arial';
+    line-height: 50px;
+    color: rgb(66, 66, 66);
+    font-size: 200%;
+    background: rgb(230, 230, 230);
+}
+
+/* ============================== */
+
+.InputBox {
+    flex-grow: 1;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: rgb(230, 230, 230);
+}
+
+.Input {
+    background: rgb(245, 245, 245);
+    margin: 15px;
+    margin-left: 50px;
+    border: none;
+    border-bottom: .5px solid rgb(160, 160, 160);
+}
+
+/* ============================== */
+
+.Icon {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial';
+    line-height: 60px;
+    color: rgb(66, 66, 66);
+    /* font-size: 200%; */
+    background: rgb(245, 245, 245);
+}
+
+.BookmarkText {
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-end;
+    background: rgb(41, 240, 230);
+}
+
+.BMLabel {
+    font-weight: bold;
+    font-family: 'Arial';
+    line-height: 30px;
+    height: 30px;
+    background: rgb(245, 245, 245);
+    color: rgb(66, 66, 66);
+}
+
+.BMURL {
+    height: 20px;
+    background: rgb(245, 245, 245);
+    color: rgb(66, 66, 66);
+}
+
+.Favourite {
+    cursor: pointer;
+    width: 25px;
+    height: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Arial';
+    line-height: 50px;
     color: rgb(252, 0, 0);
-    font-size: 150%;
-    background: rgb(29, 212, 38);
+    background: rgb(245, 245, 245);
+}
+
+.NotFavourite {
+    cursor: pointer;
+    width: 25px;
+    height: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Arial';
+    line-height: 50px;
+    color: rgb(179, 179, 179);
+    background: rgb(245, 245, 245);
 }

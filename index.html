@@ -9,35 +9,35 @@
     <link rel="stylesheet" href="BookmarkManager.css" />
 
 </head>
-
-<body>
-    
-    <div class="Container">
-
-        <div class="InlineBox">
-            <div class="Title"><a>Bookmarks</a></div>
-            <div class="AddButton"><a>+</a></div>
-        </div>
-
-        <div class="InlineBox">
-            <div class="InputBox"><input type="text" id="UserInput" class="Input" placeholder="  Input URL here"></div>
+  
+<body>   
+   
+    <div class="Container">   
+        
+        <div class="InlineBox" id="Header"> 
+            <div class="AddButton" id="BackButton"></div>
+            <div class="Title" id="Title"><a>Bookmarks</a></div>
             <div class="AddButton"id="AddButton"><a>+</a></div>
-        </div>
+        </div> 
+ 
+        <div class="InlineBox">
+            <div class="AddButton"></div>
+            <div class="InputBox">
 
-        <div id="List"class="Container">
-
-            <!-- <div class="InlineBox">
-                <div class="Icon"><a>*</a></div>
-                <div class="BookmarkText">
-                    <div class="BMLabel"><a>My Bookmark Label </a></div>
-                    <div class="BMURL"><a>www.exampleURLgoeshere.com</a></div>
+                <div class="InputBox"><input type="text" id="LabelInput" class="Input" placeholder="  Input label here">
                 </div>
-                <div class="Favourite" id="BMFavourite">X</div>
-            </div> -->
-
+                <div class="InputBox"><input type="text" id="URLInput" class="Input" placeholder="  Input URL here (required)">
+                </div>
+        
+            </div>
+            <div class="AddButton" id="x"><a>+</a></div>
         </div>
 
-            <div class="Footer">. . .</div>
+        <div id="List" class="Container">
+            <!-- Bookmarks Generate in here -->
+        </div>
+
+        <div class="HeaderFooter"></div>
     </div>
 
 </body>

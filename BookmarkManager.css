@@ -1,6 +1,11 @@
 html {
     user-select: none;
     font-family: 'Arial';
+    
+}
+
+div{
+    /* border: 0.1px solid #ff1515; */
 }
 
 .Container {
@@ -19,12 +24,14 @@ html {
     width: 390px;
     display: inline-flex;
     background: rgb(212, 29, 29);
-    /* border: 0.1px solid #ff1515; */
+   
+    
 }
 
-.Footer {
+.HeaderFooter {
     text-align: center;
     height: 20px;
+    width: 100%;
     font-weight: bold;
     font-family: 'Arial';
     color: rgb(66, 66, 66);
@@ -35,7 +42,7 @@ html {
     text-align: left;
     font-weight: bold;
     line-height: 50px;
-    padding-left: 50px;
+    /* padding-left: 50px; */
     font-family: 'Arial';
     color: rgb(66, 66, 66);
     font-size: 150%;
@@ -58,6 +65,8 @@ html {
 /* ============================== */
 
 .InputBox {
+    /* line-height: 10px; */
+    
     flex-grow: 1;
     display: inline-flex;
     flex-direction: column;
@@ -66,8 +75,10 @@ html {
 
 .Input {
     background: rgb(245, 245, 245);
-    margin: 15px;
-    margin-left: 50px;
+    /* padding-top: 3px; */
+    margin: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: none;
     border-bottom: .5px solid rgb(160, 160, 160);
 }

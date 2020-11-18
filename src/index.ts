@@ -7,46 +7,6 @@ let BackButton = document.getElementById("BackButton") as HTMLButtonElement | nu
 let Add = document.getElementById("Add") as HTMLButtonElement | null;
 let Header = document.getElementById("Header") as HTMLButtonElement | null;
 let Title = document.getElementById("Title") as HTMLButtonElement | null;
-// let BMFavourite = document.getElementById("BMFavourite") as HTMLButtonElement | null;
-// let BMRemove = document.getElementById("BMFavourite") as HTMLButtonElement | null;
-
-// Add.onclick = () => {
-
-//     console.log("add clicked");
-//     LabelInput?.remove();
-//     URLInput?.remove();
-//     Title.innerHTML = "";
-//     Title.classList.remove("Title");
-//     Title.classList.add("InputBox");
-//     BackButton.innerHTML = "<";
-
-//     Add.remove();
-
-//     Title.append(LabelInput);
-//     LabelInput.classList.add("Input");
-
-//     Title.append(URLInput);
-//     URLInput.classList.add("Input");
-
-//     Header.append(AddButton);
-//     AddButton.classList.add("Add");
-
-//     AddButton.innerHTML = "+";
-// }
-
-// BackButton.onclick = () => {
-
-//     console.log("back clicked");
-//     LabelInput?.remove();
-//     URLInput?.remove();
-//     Title.innerHTML = "Bookmarks";
-//     Title.classList.remove("InputBox");
-//     Title.classList.add("Title");
-//     BackButton.innerHTML = "";
-
-//     AddButton.remove();
-//     Header.append(Add);
-// }
 
 export class Bookmark {
     icon: string;
@@ -67,36 +27,13 @@ export class Bookmark {
             alert("button not found");
         } else {
             AddButton.onclick = () => {
-
                 // swap title for input fields.
                 let AddNew = new Boolean(false);
                 if (AddNew == false) {
                     AddNew = true;
                     console.log("addnewpressed");
                     console.log("add clicked");
-                    LabelInput?.remove();
-                    URLInput?.remove();
-                    Title.innerHTML = "";
-                    Title.classList.remove("Title");
-                    Title.classList.add("InputBox");
-                    BackButton.innerHTML = "<";
-
-                    Add.remove();
-
-                    Title.append(LabelInput);
-                    LabelInput.classList.add("Input");
-
-                    Title.append(URLInput);
-                    URLInput.classList.add("Input");
-
-                    Header.append(AddButton);
-                    AddButton.classList.add("Add");
-
-                    AddButton.innerHTML = "+";
-
-
-
-
+                   
                     if (URLInput?.value.length == 0) {
                         console.log("no URLinput")
                         return;
@@ -109,24 +46,6 @@ export class Bookmark {
                         this.build();
                     }
                 }
-
-
-                BackButton.onclick = () => {
-
-
-                    AddNew = false;
-                    console.log("back clicked");
-                    LabelInput?.remove();
-                    URLInput?.remove();
-                    Title.innerHTML = "Bookmarks";
-                    Title.classList.remove("InputBox");
-                    Title.classList.add("Title");
-                    BackButton.innerHTML = "";
-
-                    AddButton.remove();
-                    Header.append(Add);
-                }
-
             }
 
             // add bookmark
@@ -183,10 +102,6 @@ export class Bookmark {
                 BMBox.append(BMRemove);
                 BMRemove.innerHTML = "X";
 
-                //swap title and input fields.
-
-
-
                 //remove bookmark
                 BMRemove.onclick = function remove() {
                     BMBox.remove();
@@ -200,7 +115,6 @@ export class Bookmark {
             }
         }
     }
-
 
 let bm1 = new Bookmark("*", "My Bookmark Label", "www.websiteURLgoeshere.com");
 let bm2 = new Bookmark("^", "My Second Bookmark", "www.coolpage.cool");
